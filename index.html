@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🎂 HBD Cami 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff4d6d;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      background: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: floatUp 8s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      opacity: 0.8;
+      animation: fall 4s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎂 HBD Cami 🎉</h1>
+    <p>Primero que nada, buenos días. Hoy es un día muy especial porque celebras un año más de vida, y deseo de corazón que lo disfrutes al máximo, rodeada de personas que te quieren y que valoran lo increíble que eres.</p>
+    <p>Espero que Diosito te bendiga con muchos años más, llenos de salud, alegría y oportunidades para cumplir cada una de tus metas, especialmente esas de las que me llegaste a contar jaja. Estoy seguro de que tienes todo lo necesario para lograr lo que te propongas, porque eres alguien constante, dedicada y con una forma de ser que inspira.</p>
+    <p>No cualquiera transmite la buena vibra que tú transmites, por eso estoy convencido de que eres un orgullo no solo para tu familia, sino también para quienes hemos tenido la fortuna de coincidir contigo. Tienes cualidades y hábitos admirables que hacen que destaque tu manera de ser, y eso te vuelve alguien muy especial.</p>
+    <p>Disfruta muchísimo tu día, celébralo como se debe, y guarda cada momento bonito de este cumpleaños para que lo recuerdes siempre con una sonrisa. Te mereces todo lo bueno que la vida tiene preparado para ti.</p>
+    <p><b>¡Feliz cumpleaños, Cami!</b> Que este nuevo año de vida venga cargado de sorpresas lindas y de muchas razones para seguir brillando. &lt;4</p>
+  </div>
+
+  <script>
+    // Globos
+    for (let i = 0; i < 10; i++) {
+      let balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      balloon.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(balloon);
+    }
+
+    // Confeti
+    for (let i = 0; i < 50; i++) {
+      let confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.background = `hsl(${Math.random() * 360}, 70%, 50%)`;
+      confetti.style.animationDuration = (2 + Math.random() * 3) + "s";
+      confetti.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
